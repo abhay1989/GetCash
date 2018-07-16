@@ -1,0 +1,115 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ng-click="profile()" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Edit Profile</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+  <ion-content style="padding-top:45px;">
+    <form class="" ng-submit="editprofileform.$valid && edit_profile()" name="editprofileform" novalidate>
+    <div class="row">
+      <div class="text-center padding"  flow-init="{target: uploadprofileimage,singleFile: true,testMethod:'POST',testChunks:false, query: { user_id : user_id }}" flow-file-success="afterprofileuploadflowsuccess($message,$file)" flow-complete="afteruploadcomplete() && $flow.cancel()" >
+            <div class="padding text-center" style="padding-left:80px;">
+              <img ng-src="{{ profile_data.UPhoto_name && profileimagepath+profile_data.UPhoto_name || 'img/dummy.jpg' }}" class="img-responsive" style="width:100px;border: 2px solid #fff; border-radius: 59%; height: 100px;"  />
+              <div class="selected" ng-repeat="file in $flow.files">
+                  <p>{{$index+1}}</p>
+                  <p>{{file.name}}</p>
+                  <p>{{file.msg}}</p>
+                  <p><img class="pic_box" flow-img="file" /></p>
+                  <p><a ng-click="file.cancel()">Cancel</a></p>
+              </div>
+            </div>
+
+                  <button type="button" name="button" class="button button-dark button-small" flow-btn>Choose Image</button>
+                  <!-- <input type="file" accept="image" flow-btn> -->
+                <button class="button button-small button-calm" ng-disabled="!$flow.files.length"  type="button" ng-click="$flow.upload()">Upload</button>
+        </div>
+
+    </div>
+      <div class="col col-75">
+        <div class="list  edit_fields showvalidation" style="padding-top:15px;">
+          <label class="item item-input">
+            <input type="text" placeholder="First Name" name="fname" ng-model="profile_data.UserName" required>
+          </label>
+          <p ng-show="editprofileform.$submitted && editprofileform.fname.$error.required">please enter First name</p>
+          <label class="item item-input">
+            <input type="text" placeholder="Last Name" name="lname" ng-model="profile_data.LastName" required>
+          </label>
+          <p ng-show="editprofileform.$submitted && editprofileform.lname.$error.required">please enter Last name</p>
+        </div>
+     </div>
+   </div>
+   <div class="" style="background:#f4f4f4;">
+     <h5 class="padding">PERSONAL INFORMATION</h5>
+   </div>
+
+   <div class="list edit_fields padding showvalidation">  
+       <label class="item item-input">
+        <input type="text" placeholder="Email" name="email" ng-model="profile_data.EmailId" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{0,9}$" disabled>
+       </label> 
+<!--        <p ng-show="editprofileform.$submitted && editprofileform.email.$error.required">please enter email</p>
+       <p ng-show="editprofileform.$submitted && editprofileform.email.$error.pattern">please enter a valid  -->email</p> 
+       <label class="item item-input">
+        <input type="text" placeholder="Mobile No." name="mobile" ng-model="profile_data.MobileNo" ng-maxlength='10' ng-minlength='10' disabled>
+       </label>
+      <p ng-show="editprofileform.$submitted && editprofileform.mobile.$error.required">please enter your mobile</p>
+      <p ng-show="editprofileform.$submitted && editprofileform.mobile.$error.maxlength">please enter valid mobile</p>
+      <p ng-show="editprofileform.$submitted && editprofileform.mobile.$error.minlength">please enter valid mobile</p>
+        <label class="item item-input">
+        <input type="text" placeholder="Address" name="address" ng-model="profile_data.Address" required>
+       </label>
+       <p ng-show="editprofileform.$submitted && editprofileform.address.$error.required">please enter address</p>
+       <label class="item item-input item-select">Select Country
+          <select ng-options="country.CountryId as country.CountryName for country in country_data" ng-model="profile_data.CountryId" name="country" required>
+          </select>
+        </label>
+        <p ng-show="editprofileform.$submitted && editprofileform.country.$error.required">please select country</p>
+       <label class="item item-input item-select">Select State
+        <select ng-options="state.StateId as state.StateName for state in state_data" ng-model="profile_data.StateId" name="state" required>
+          </select>
+        </label>
+        <p ng-show="editprofileform.$submitted && editprofileform.state.$error.required">please select state</p>
+        <label class="item item-input item-select">Select City
+          <select ng-options="city.CityId as city.CityName for city in city_data" ng-model="profile_data.CityId" name="city" required>
+          </select>
+        </label>
+        <p ng-show="editprofileform.$submitted && editprofileform.city.$error.required">please select city</p>
+       <label class="item item-input" ng-click="openDatePicker()">
+        <input type="text" placeholder="DOB"  name="dob" ng-model="profile_data.DOB" required>
+       </label> 
+       <p ng-show="editprofileform.$submitted && editprofileform.dob.$error.required">please select date</p>
+       
+<!--        <label class="item item-input">
+        <input type="text" placeholder="Pan No" ng-model="profile_data.PanNo" name="pan" required>
+       </label>   
+       <p ng-show="editprofileform.$submitted && editprofileform.pan.$error.required">please enter pan.no</p>
+ -->       
+    </div>
+ </div>  
+   <h5 class="padding" style="background:#f4f4f4;">Select Sex :</h5>
+   <div class="row showvalidation">
+        <div class="col">
+      <label class="item item-icon-left item-radio" style="border: none">
+        <input type="radio" name="group" value="M" ng-model="profile_data.Gender" required>
+        <div class="item-content">
+        Male
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <p ng-show="editprofileform.$submitted && editprofileform.group.$error.required">please select gender</p>
+    </div>     
+    <div class="col">
+      <label class="item item-icon-left item-radio" style="border: none">
+        <input type="radio" name="group" value="F" ng-model="profile_data.Gender" required>
+        <div class="item-content">
+          Female
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>      
+       </div>      
+  </div>     
+   <div class="padding" style="margin-top:30px;">
+      <button type="submit" class="button button-positive theme_btn button-block">Save</button>
+   </div>
+
+   </form>
+ </ion-content>
+</ion-view>

@@ -1,0 +1,115 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title"></h1>
+</div>
+<ion-view ng-controller="socialShareCtrl">
+  <ion-content class="invite">
+    <div class="padding">
+      <div class="invite_box">
+        <div class="row">
+          <div class="col col-40">
+            <div class="invite_circle text-center light">
+              <img src="img/invitesign.svg">
+              <h4 style="margin-top:5px;" class="light">Get Cash</h4>
+            </div>
+          </div>
+          <div class="col col-60 ">
+            <h4>Each friend can give you</h4>
+            <!--<h3 class="text-center">Rs.25</h3>-->
+            <center><img class="img-circle" src="img/rupeeimg5.jpg" style="width:35px;border-radius:6px"></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <p>1. Get <span style="color:#00bfff;">₹.20</span> per friend who install and completes registration in GetCash app  </p>
+      <p>2. Your Friend will also get Rs. 20 extra start inviting !</p>
+    </div>
+    <div class="padding text-center">
+      <h4>Share this massage to friend and start earning</h4>
+      <div class="share_box">
+        <p>This app gives free cash every day. Download and get rs 20 extra Cash Today <a ng-click="gotoGooglePlay()">Download Now</a></p>
+       </div>
+    </div>
+    <div class="row padding social_share" ng-disabled="InstallAppsCount==0">
+      <div class="col text-center ">
+       <button class="button button-large icon ion-social-facebook sharebtn" style="background:#3b5998;" ng-click="facebookShare()"></button>
+       <p>Share on Fb </p>
+      </div>
+      <div class="col text-center">
+       <button class="button button-large icon ion-social-whatsapp sharebtn" style="background:#55CD6C;" ng-click="whatsupShare()"></button>
+       <p>Share on Whatsapp </p>
+      </div>
+    </div>
+
+    <div class="row padding social_share" ng-disabled="InstallAppsCount==0">
+      
+       <div class="col text-center">
+       <button class="button button-large icon ion-social-twitter sharebtn" style="background:#1da1f2;" ng-click="tweetShare()"></button>
+       <p>Share on Twitter </p>
+      </div>
+
+       <div class="col text-center">
+       <button class="button button-large icon ion-android-textsms sharebtn" style="background:#333333;" ng-click="smsShare()"></button>
+       <!-- ng-disabled="InstallAppsCount<=0" -->
+       <p>Share on SMS </p>
+       </div>
+
+    </div>
+
+    <div class="row padding social_share">
+
+       <!--<div class="col text-center">
+       <button class="button button-large icon ion-bluetooth sharebtn" style="background:#3b5998;" ng-click="bluetoothShare()"></button>
+       <p>Share on Bluetooth </p>
+       </div>-->
+
+    </div>
+
+
+       <div class="col text-center"  ng-disabled="InstallAppsCount==0">
+       <button class="button button-large icon ion-android-mail sharebtn" style="background:#444444;" ng-click="emailShare()" ng-disabled="InstallAppsCount>0"></button>
+       <p>Share on Email </p>
+      </div>
+
+      <p class="col text-center"style="color:red" ng-hide="InstallAppsCount==0"> {{message}} </p>
+      <p class="col text-center"style="color:#00bf ff" ng-hide="InstallAppsCount>0"> {{message}} </p>
+
+<!--       <p class="col text-center"style="color:red"> {{message}} </p>
+      <p class="col text-center"style="color:#00bf ff"> {{message}} </p>
+ -->
+       <div class="col text-center">      
+       <input type="hidden" class="col text-center" name="appCnts" ng-model="InstallAppsCount" value="{{InstallAppsCount}}"></input>
+       </div>
+    
+
+    <!--<div>
+      <div class="col-67 custom_list">
+          Select Bluetooth Device
+          <select ng-options="out.id as out.name for out in lists" ng-model="id" name="name" required>
+          </select>
+      </div>
+
+       <div class="col-100 custom_list">
+            <ion-list>
+              <ion-item-sliding *ngFor="let out of lists">
+                <ion-item>{{out.name}}</ion-item>
+                <ion-item-options slide="right">
+                    <button ion-button icon-only (click)="task1()" color="secondary">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+                </ion-item-options>    
+              </ion-item-sliding>
+            </ion-list>
+      </div>
+    </div> -->
+
+       <!--<div class="col text-center">
+       <button class="button button-large sharebtn" style="background:#3b5998;" ng-click="listDevices()"></button>
+       <p>Show List of Devices </p>
+       </div>-->
+
+
+
+  </ion-content>
+</ion-view>

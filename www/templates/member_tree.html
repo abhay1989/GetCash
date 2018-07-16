@@ -1,0 +1,196 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button><h1 class="title">Member Tree</h1>
+</div>
+
+<ion-view ng-repeat="fbmembers in user_members | limitTo: 1">
+ <ion-content class="member_tree" style="padding-top:44px;"  ng-controller="EventsCtrl">
+   <div class="padding-vertical text-center" style="background:#00bfff;">
+     <h4 style="color:#fff;">Your Network List</h4>
+   </div>
+   <!-- file in $flow.files -->
+   <div class="row member_wrapper">
+     <div class="col col-33 center_border" >
+       <div class="" style="display:flex;margin-top:100px;">
+       <div class="" style="width:90%;">
+         <div class="card">
+           <div class="self_img text-center">
+             <!-- <img src="img/mike.png"> | limitTo: 50    -->
+
+           <img ng-src="{{fbmembers.fuserphoto && profileimagepath+fbmembers.fuserid+'/'+fbmembers.fuserphoto || 'img/dummy.jpg' }}"/>
+           </div>
+
+           <div class="self_info">
+             <h5 class="text-center">{{fbmembers.fusername}}</h5>
+             <div class="data_tabel">
+              <div class="" style="width:50%;border-right:1px solid #d3d3d3;padding-left:10px;min-height:25px;">
+                 <i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i>
+               </div>
+               <div class="" style="width:50%;border-right:1px solid #d3d3d3;padding-left:10px;min-height:25px">
+                <span> ₹.</span>
+               </div>
+             </div>
+             <div class="data_tabel">
+              <div class="" style="width:50%;border-right:1px solid #d3d3d3;padding-left:10px;min-height:25px;">
+                 <span>{{fbmembers.membercount||0}}</span>
+               </div>
+               <div class="" style="width:50%;border-right:1px solid #d3d3d3;padding-left:10px;min-height:25px;">
+                {{fbmembers.totalearning||0}}
+                 <!-- {{fbmember.totalearning}} -->
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div style="width:10%;position:relative;">
+         <div class="" style="width:100%;height:3px;background:#d3d3d3;position:absolute;top: 50%; margin-top: -2px;">
+         </div>
+       </div>
+       </div>
+     </div>
+
+    <!--Defining the Members List  -->
+   <div class="col-67 custom_list">
+
+    <ion-list ng-repeat="member in user_members">
+
+     <div class="member_row">
+       <div class="dash_wrapper" style="width:6%;">
+         <div class="dash"> </div>
+       </div>
+       <div style="width:36%;">
+         <div class="member_img text-center">
+           <!-- <img src="img/mike.png"> -->
+           <img ng-src="{{member.uphoto_name && profileimagepath+member.Userid+'/'+member.uphoto_name || 'img/dummy.jpg' }}">
+         </div>
+       </div>
+       <div class="dash_wrapper" style="width:8%;">
+         <div class="dash"> </div>
+       </div>
+       <div class="member_info">
+         <div class="text-center member_name">
+            <span>{{member.UserName | limitTo : 20}}</span>
+         </div>
+         <div class="members_people text-center">
+            <span><i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i> {{member.members}}</span>
+         </div>
+         <div class="member_balance">
+           <span>₹.{{member.total}}</span>
+         </div>
+       </div>
+     </div>
+
+   </ion-list>
+
+<!--      <div class="member_row">
+       <div class="dash_wrapper" style="width:6%;">
+         <div class="dash"> </div>
+       </div>
+       <div style="width:36%;">
+         <div class="member_img text-center">
+           <img src="img/mike.png">
+         </div>
+       </div>
+       <div class="dash_wrapper" style="width:8%;">
+         <div class="dash"> </div>
+       </div>
+       <div class="member_info">
+         <div class="text-center member_name">
+            <span>Riya</span>
+         </div>
+         <div class="members_people text-center">
+            <span><i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i> 22</span>
+         </div>
+         <div class="member_balance">
+           <span>₹.423</span>
+         </div>
+       </div>
+     </div> -->
+
+
+<!--      <div class="member_row">
+       <div class="dash_wrapper" style="width:6%;">
+         <div class="dash"> </div>
+       </div>
+       <div style="width:36%;">
+         <div class="member_img text-center">
+           <img src="img/mike.png">
+         </div>
+       </div>
+       <div class="dash_wrapper" style="width:8%;">
+         <div class="dash"> </div>
+       </div>
+       <div class="member_info">
+         <div class="text-center member_name">
+            <span>Riya</span>
+         </div>
+         <div class="members_people text-center">
+            <span><i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i> 22</span>
+         </div>
+         <div class="member_balance">
+           <span>₹.423</span>
+         </div>
+       </div>
+     </div>
+ -->
+
+<!--      <div class="member_row">
+       <div class="dash_wrapper" style="width:6%;">
+         <div class="dash"> </div>
+       </div>
+       <div style="width:36%;">
+         <div class="member_img text-center">
+           <img src="img/mike.png">
+         </div>
+       </div>
+       <div class="dash_wrapper" style="width:8%;">
+         <div class="dash"> </div>
+       </div>
+       <div class="member_info">
+         <div class="text-center member_name">
+            <span>Riya</span>
+         </div>
+         <div class="members_people text-center">
+            <span><i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i> 22</span>
+         </div>
+         <div class="member_balance">
+           <span>₹.423</span>
+         </div>
+       </div>
+     </div> -->
+
+
+<!--      <div class="member_row">
+       <div class="dash_wrapper" style="width:6%;">
+         <div class="dash"> </div>
+       </div>
+       <div style="width:36%;">
+         <div class="member_img text-center">
+           <img src="img/mike.png">
+         </div>
+       </div>
+       <div class="dash_wrapper" style="width:8%;">
+         <div class="dash"> </div>
+       </div>
+       <div class="member_info">
+         <div class="text-center member_name">
+           <div class="name_center">
+              <span>Riya</span>
+           </div>
+
+         </div>
+         <div class="members_people text-center">
+            <span><i class="icon ion-ios-people" style="color:#00bfff;font-size:20px;vertical-align: sub;"></i> 22</span>
+         </div>
+         <div class="member_balance">
+           <span>₹.423</span>
+         </div>
+       </div>
+     </div> -->
+
+
+     </div>
+
+
+   </div>
+  </ion-content>
+</ion-view>

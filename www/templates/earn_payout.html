@@ -1,0 +1,268 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Payout Chart</h1>
+</div>
+
+<ion-view ng-controller="EventsCtrl">
+  <ion-content class="payout" style="padding-top:44px;">
+    <div class="card payout_header text-center">
+      <h4>GETCASH JOINING PLAN</h4>
+      <h5>THIS JOINING PLAN IS ONLY FOR INDIA</h5>
+    </div>
+    <div class="card joining_step">
+      <div class="row">
+        <div class="col col-25">
+
+        </div>
+        <div class="col col-75">
+          <div class="step" style="background:#ffb5b6;position:relative;z-index:9;">
+            Go to playstore & search GetCash
+          </div>
+          <div class="step" style="background:#81bc8c;position:relative;z-index:8;">
+            Install and open GetCash
+          </div>
+          <div class="step" style="background:#ffcc7a;position:relative;z-index:7;">
+            Click on signup with GetCash
+          </div>
+          <div class="step" style="background:#fa7473;position:relative;z-index:6;">
+            Register Yourself
+          </div>
+          <div class="step" style="background:#73dcfa;position:relative;z-index:5;">
+            Enter sponser id
+          </div>
+          <div class="step" style="background:#db9dfe;position:relative;z-index:4;">
+            You joined now
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="" style="background:#f4f4f4;border:2px solid #00bfff;">
+      <h4 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+    </div>
+
+    <div class="row payout_title">
+      <div class="col col-25 text-center">
+        <h5>Level </h5>
+      </div>
+      <div class="col col-20 text-center">
+        <h5>Joining</h5>
+      </div>
+      <div class="col col-15 text-center">
+        <h5>In %</h5>
+      </div>
+      <div class="col col-15 text-center">
+        <h5>In ₹</h5>
+      </div>
+      <div class="col col-25 text-center"  style="border-left:1px solid #d3d3d3;">
+        <h5>Total Earning</h5>
+      </div>
+    </div>
+
+
+     <div class=" table_card" ng-repeat="earn in earnpay_data">
+        <div class="row">
+          <div class="col col-25 text-center">
+            <div class="payout_number">
+                <span><strong style="color:green;" >{{earn.LevelName | limitTo:7}}</strong></span>
+            </div>
+          </div>
+          <div class="col col-20 text-center">
+            <div class="payout_number">
+                <span>{{earn.MaxMembers}}</span>
+            </div>
+          </div>
+          <div class="col col-15 text-center">
+            <div class="payout_number">
+                <span> {{earn.InPercentage | limitTo:2}}%</span>
+            </div>
+          </div>
+          <div class="col col-15 text-center">
+            <div class="payout_number">
+                <span> {{earn.PerValue | limitTo:4}} ₹</span>
+            </div>
+          </div>
+          <div class="col col-25 text-right" convertToNumber()>
+            <div class="payout_number">
+                <span> ₹ {{earn.TotalEarn}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--      <div class="row">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+            <span><strong style="color:green;" >Level 2</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 100</span>
+          </div>
+
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span>10%</span>
+          </div>
+
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.06 ₹</span>
+          </div>
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span>₹ 6 </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+              <span><strong style="color:#59c8f6;">Level 3</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 1,000</span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span>10%</span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.06 ₹</span>
+          </div>
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span>₹ 60</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+            <span><strong style="color:#1a7398;">Level 4</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span>10,000 </span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 10%</span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.06 ₹</span>
+          </div>
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span>₹ 600</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+              <span><strong style="color:#eb8727;">Level 5</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 1 lac</span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 10%</span>
+          </div>
+
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.6 ₹</span>
+          </div>
+
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span>₹ 6,000 </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+              <span><strong style="color:#ee6d5a;">Level 6</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 10 lac.</span>
+          </div>
+
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 5% </span>
+          </div>
+
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.03 ₹</span>
+          </div>
+
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span> ₹ 30,000</span>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="border-bottom:0px;">
+        <div class="col col-25 text-center">
+          <div class="payout_number">
+            <span><strong style="color:#dd2d30;">Level 7</strong></span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 1 Cr.</span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span>50% </span>
+          </div>
+        </div>
+        <div class="col col-15 text-center">
+          <div class="payout_number">
+              <span> 0.03 ₹</span>
+          </div>
+        </div>
+        <div class="col col-25 text-right">
+          <div class="payout_number">
+              <span> ₹ 30,000,00</span>
+          </div>
+         </div>
+
+
+      </div>
+    </div> -->
+
+
+
+  </ion-content>
+</ion-view>

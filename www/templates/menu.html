@@ -1,0 +1,52 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+        <span><img src="img/get_cash2.png" alt="" /></span>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+          <button class="button button-clear button-icon ion-android-notifications" style="color:#00bfff;" ui-sref="notification"> </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menus</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+         <ion-item menu-close href="#/app/tab/home">Home </ion-item>
+         <ion-item menu-close href="#/challenges">Challenges </ion-item>
+         <ion-item menu-close href="#/member_tree"> Member Tree</ion-item>
+         <!--<ion-item menu-close href="#/hot_offers">Hot Offers</ion-item>
+         <ion-item class="item-stable"
+                    ng-click="toggleGroup(0 ?0:1)"
+                    ng-class="{active: isGroupShown(0)}">
+                    Recharge
+                    <i class="icon icon-right" style="float:right;" ng-class="isGroupShown(1) ? 'ion-minus' : 'ion-plus'"></i>
+          </ion-item>
+         <ion-item menu-close href="#/mobile" class="item-accordion" ng-show="isGroupShown(1)">Mobile</ion-item>
+         <ion-item menu-close href="#/dth" class="item-accordion" ng-show="isGroupShown(1)">DTH</ion-item>
+         <ion-item menu-close href="#/datacard" class="item-accordion" ng-show="isGroupShown(1)">Datacard</ion-item>-->
+         <ion-item menu-close href="#/help">Help</ion-item>
+         <ion-item menu-close href="#/top_ranker">Top Ranker</ion-item>
+         <ion-item menu-close href="#/terms">Terms and Conditions</ion-item>
+         <!--<ion-item menu-close href="#/earn_payout">Earn Payout</ion-item>-->
+         <ion-item menu-close href="#/notification">Notification</ion-item>
+         <ion-item menu-close href="#/user_setting">User Setting</ion-item>
+         <ion-item menu-close href="#/support">Support</ion-item>
+
+         <!--<ion-item menu-close href="#/search_offers">Search Offers </ion-item>-->
+         <!--<ion-item menu-close href="#/rateus">Rate Us</ion-item>-->
+         <ion-item menu-close ng-click="logout()">Logout</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

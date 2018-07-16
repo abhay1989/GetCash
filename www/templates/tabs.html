@@ -1,0 +1,34 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive custom_tab">
+
+  <!-- home tab -->
+  <ion-tab title="Home" icon-off="ion-home" icon-on="ion-home" href="#/app/tab/home">
+    <ion-nav-view name="home"></ion-nav-view>
+  </ion-tab>
+  <!-- invite -->
+  <ion-tab title="Invite" icon-off="ion-android-share-alt" icon-on="ion-android-share-alt" href="#/app/tab/invite">
+    <ion-nav-view name="invite"></ion-nav-view>
+  </ion-tab>
+  <!-- network -->
+  <!--<ion-tab title="Recharge" icon-off="ion-network" icon-on="ion-network" href="#/app/tab/recharge">
+    <ion-nav-view name="recharge"></ion-nav-view>
+  </ion-tab>-->
+  <!-- reedme -->
+  <!--<ion-tab title="Offers" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/app/tab/offer">
+    <ion-nav-view name="offers"></ion-nav-view>
+  </ion-tab>-->
+  <!-- history -->
+  <ion-tab title="Passbook" icon-off="ion-android-list" icon-on="ion-android-list" href="#/app/tab/passbook">
+    <ion-nav-view name="passbook"></ion-nav-view>
+  </ion-tab>
+  <!-- achievers  -->
+  <ion-tab title="Profile" icon-off="ion-person" icon-on="ion-person" href="#/app/tab/profile">
+    <ion-nav-view name="profile"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

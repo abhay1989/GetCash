@@ -1,0 +1,28 @@
+
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Rate Us</h1>
+</div>
+
+<ion-view ng-controller="EventsCtrl">
+<ion-content ng-controller="ratingsCtrl">
+          <div class="padding text-center">
+        <h3>Rate the App</h3>
+        <div class="col col-33">
+
+
+       <button type="button" class="button button-positive theme_btn button-block" name="button" ng-click="showRatingScreen()">Install</button>
+
+       <button type="button" class="button button-positive theme_btn button-block" name="button" ng-click="listInboxSMS()">Install</button>
+
+
+<!--           <a href="javascript:" ng-repeat="r in ratingArr" class="padding" style="text-decoration:none;">
+            <i style="font-size: 50px;color: #D4AF37" gold class="icon {{r.icon}}" ng-click="setRating(r.question,r.value)"></i>
+
+<!--             <i  gold class="glyphicon" (click)="update(index + 1)" [ngClass]="index < rate ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+
+				//showRatingScreen
+ -->          </a>
+ -->        </div>
+      </div>
+</ion-content></ion-view>

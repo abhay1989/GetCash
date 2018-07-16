@@ -1,0 +1,32 @@
+<ion-view ng-controller="EventsCtrl">
+  <ion-content class="center-content padding login">
+    <div class="padding" style="margin-bottom:30px;">
+      <img src="img/get_cash.png">
+    </div>
+    <form class="padding" ng-submit="reset_form.$valid && resetpass()" name="reset_form" novalidate>
+      <div class="list showvalidation">
+        <label class="item item-input">
+          <input type="number" placeholder="Activation Code " name="code" required ng-model="reset_data.activation_code">
+        </label>
+        <p ng-show="reset_form.$submitted && reset_form.code.$error.required">please enter your activation code</p>
+        <!--  <label class="item item-input">
+          <input type="text" placeholder="Email Id " name="email" required ng-model="reset_data.user_email">
+        </label> -->
+        <label class="item item-input" >
+          <input type="password" placeholder="Your New Password" name="pass" required ng-model="reset_data.user_pass">
+        </label>
+        <p ng-show="reset_form.$submitted && reset_form.pass.$error.required">please enter your new password</p>
+      </div>
+      <button type="submit" class="button button-block button-positive theme_btn  button-light" >Reset</button>
+    </form>
+    <p style="color:#387ef5"> {{message}} </p>
+    <div class="text-center">
+      <a class="" ui-sref="login">Log In</a>
+    </div>
+
+    <div class="text-center">
+      <button class="button reset_btn" style="color:#fff;border-radius:24px;min-width:80px" type="button" ng-click="resend_OTP()">Resend OTP</button>
+    </div>
+
+  </ion-content>
+</ion-view>

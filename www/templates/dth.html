@@ -1,0 +1,65 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">DTH Recharge</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+<ion-content style="padding-top:44px;">
+  <form class="padding"  ng-submit="dthBooking.$valid && getDataCardBookStatus(dth_book_data)" name="dthBooking" novalidate>
+    <div class="list send_fields custom_select">
+      <label class="item item-input item-select">
+        
+        <div class="offer_select">
+          Select Operator
+          <select ng-model="dth_book_data.operator_code" 
+            ng-options="sp.operator_code as sp.operator_name for sp in dthproviders_list" ng-change="showSelectValue(sp.operator_code)">
+            <option value="">Select Merchant</option>
+          </select>      
+        </div>
+
+    <!--<div class="offer_select">
+
+      <label class="item item-input item-select">
+
+        <div class="input-label">Select Operator</div>
+            </br>
+            <select ng-model="dth_book_data.operator_code" 
+            ng-options="sp.operator_code as sp.operator_name for sp in dthproviders_list" ng-change="showSelectValue(sp.operator_code)">
+            <option value="">Select Merchants</option>
+
+      </label>
+    </div>--> 
+
+
+      </label>
+          <label class="item item-input">
+          <input type="number" placeholder="Registered Mobile No. or Subsciber Id" ng-model="dth_book_data.user_mobileno" 
+          ng-change="chktxtLen($event)" name="usermobile"  required ng-maxlength='10' ng-minlength='10'>
+          </label>
+      <label class="item item-input">
+
+        <p ng-show="dthBooking.$submitted && dthBooking.usermobile.$error.required">Please enter valid Mobile No. / Subscriber ID...!</p>
+      
+      <!-- <input type="number" placeholder="Amount"> -->
+      <input ng-model="dth_book_data.user_amount" placeholder="Amount" type="number" ng-model="dth_book_data.user_amount" name="useramount" required></input>
+      </label>
+
+        <p ng-show="dthBooking.$submitted && dthBooking.useramount.$error.required">Please enter the Recharge Amount...!</p>
+   </div>
+   
+   <div class="">
+     <center>
+        <button type="submit" class="button theme_btn button-positive" style="color:#fff;border-radius:24px;min-width:220px;">
+           Proceed to Recharge
+        </button>
+     </center>   
+   </div>
+
+    <a href="https://test.instamojo.com/@abhay_chaudhary2/" rel="im-checkout" data-behaviour="remote" data-style="light" data-text="Checkout With Instamojo">Pay Instamojo</a>
+
+<script src="https://js.instamojo.com/v1/button.js"></script>     
+
+   <p style="color:red"> {{message}} </p>  
+  </form>
+  
+</ion-content>
+</ion-view>

@@ -1,0 +1,118 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-carousel-3d",
+        "scope": null,
+        "escapedName": "angular-carousel-3d",
+        "name": "angular-carousel-3d",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Rutuja\\cashapp"
+    ]
+  ],
+  "_from": "angular-carousel-3d@latest",
+  "_id": "angular-carousel-3d@0.2.0",
+  "_inCache": true,
+  "_location": "/angular-carousel-3d",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-carousel-3d-0.2.0.tgz_1499247654536_0.6789395110681653"
+  },
+  "_npmUser": {
+    "name": "luwangel",
+    "email": "adrien.amoros@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-carousel-3d",
+    "scope": null,
+    "escapedName": "angular-carousel-3d",
+    "name": "angular-carousel-3d",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-carousel-3d/-/angular-carousel-3d-0.2.0.tgz",
+  "_shasum": "5254c77b53d6e22cbd8e6ae6ba31d9c0594d0646",
+  "_shrinkwrap": null,
+  "_spec": "angular-carousel-3d",
+  "_where": "C:\\Users\\Rutuja\\cashapp",
+  "author": {
+    "name": "Vladimir Bujanovic"
+  },
+  "bugs": {
+    "url": "https://github.com/Wlada/angular-carousel-3d/issues"
+  },
+  "dependencies": {},
+  "description": "Angular Carousel 3d",
+  "devDependencies": {
+    "del": "3.0.x",
+    "eslint": "4.0.x",
+    "event-stream": "3.3.4",
+    "gulp": "3.9.x",
+    "gulp-angular-templatecache": "2.0.x",
+    "gulp-concat": "2.6.x",
+    "gulp-connect": "5.0.x",
+    "gulp-eslint": "4.0.x",
+    "gulp-header": "1.8.x",
+    "gulp-htmlmin": "3.0.x",
+    "gulp-less": "3.3.x",
+    "gulp-minify-css": "1.2.x",
+    "gulp-open": "2.0.x",
+    "gulp-order": "1.1.x",
+    "gulp-plumber": "1.1.x",
+    "gulp-rename": "1.2.x",
+    "gulp-uglify": "3.0.x",
+    "gulp-util": "3.0.x",
+    "jasmine-core": "2.6.x",
+    "karma": "1.7.x",
+    "karma-chrome-launcher": "2.1.x",
+    "karma-firefox-launcher": "1.0.x",
+    "karma-jasmine": "1.1.x",
+    "mversion": "1.10.x"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5254c77b53d6e22cbd8e6ae6ba31d9c0594d0646",
+    "tarball": "https://registry.npmjs.org/angular-carousel-3d/-/angular-carousel-3d-0.2.0.tgz"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "gitHead": "8186f94ec32cac1f03c2930ff2a7058255e2b442",
+  "homepage": "https://github.com/Wlada/angular-carousel-3d",
+  "keywords": [
+    "angularjs",
+    "angular",
+    "directive"
+  ],
+  "license": "MIT",
+  "main": "dist/directive.js",
+  "maintainers": [
+    {
+      "name": "luwangel",
+      "email": "adrien.amoros@gmail.com"
+    }
+  ],
+  "name": "angular-carousel-3d",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wlada/angular-carousel-3d.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "test": "gulp test"
+  },
+  "version": "0.2.0"
+}

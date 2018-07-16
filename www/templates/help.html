@@ -1,0 +1,58 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button><h1 class="title">Help</h1>
+</div>
+<ion-view ng-repeat="help in help_data">
+ <ion-content class="help" style="padding-top:44px;" ng-controller="EventsCtrl">
+
+   <div class="top_box">
+      <div class="payout_box">
+      	<span class="payout_text">Getting Low Payouts..</span>
+      </div>
+      <p>{{help.HelpTitle | limitTo:400}}</p>
+   </div>
+
+   <div class="row number_row">
+     <div class="col-10">
+
+     </div>
+     <div class="col-90">
+
+       <div class="help_list" ng-if="help.HelpDesc1.trim().length > 0">
+         <div class="number_circle">
+           <span>1</span>
+         </div>       
+         <p>{{help.HelpDesc1 | limitTo:400}}</p>
+       </div>
+
+       <div class="help_list" style="background:#f4f4f4;" ng-if="help.HelpDesc2.trim().length > 0">
+         <div class="number_circle">
+           <span>2</span>
+         </div>
+        <p>{{help.HelpDesc2 | limitTo:400}}</p>
+       </div>
+
+       <div class="help_list" ng-if="help.HelpDesc3.trim().length > 0">
+         <div class="number_circle">
+           <span>3</span>
+         </div>
+        <p>{{help.HelpDesc3 | limitTo:400}}</p>
+       </div>
+
+       <div class="help_list" style="background:#f4f4f4;" ng-if="help.HelpDesc4.trim().length > 0">
+         <div class="number_circle">
+           <span>4</span>
+         </div>
+        <p>{{help.HelpDesc4 | limitTo:400}}</p>
+       </div>
+
+       <div class="help_list" ng-if="help.HelpDesc5.trim().length > 0>
+         <div class="number_circle">
+           <span>5</span>
+         </div>
+         <p>{{help.HelpDesc5 | limitTo:400}}</p>       
+       </div>
+     
+     </div>
+   </div>
+</ion-content>
+</ion-view>

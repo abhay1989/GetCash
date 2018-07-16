@@ -1,0 +1,32 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Pay Your Gas Bill</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+<ion-content style="padding-top:44px;">
+  <form>
+   <div class="padding">
+    <div class="list send_fields custom_select">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Gas Provider
+        </div>
+        <select>
+          <option selected>Bharat Gas</option>
+          <option>Hp Gas</option>
+        </select>
+      </label>
+      <label class="item item-input">
+      <input type="text" placeholder="Cunsumer Number">
+      </label>
+      <label class="item item-input">
+       <input type="text" placeholder="Amount">
+      </label>
+    </div>
+    <button class="button button-block button-positive theme_btn">
+       Proceed
+    </button>
+  </div>
+  </form>
+</ion-content>
+</ion-view>

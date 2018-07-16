@@ -1,0 +1,42 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.passbook" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Passbook</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+<ion-content style="padding-top:40px;">
+  <form>
+ <div class="padding">
+  <h5 style="background: transparent; border: 0px; border-bottom: 1px solid #d3d3d3;" class="padding">
+      Download Statement of</h5>
+    <div class="list statement_fields">
+      <label class="item item-icon-left item-radio padding-bottom" style="border:none;">
+        <input type="radio" name="group">
+        <div class="item-content">
+        Last 1 months
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-icon-left item-radio padding-bottom item-input" style="border: none">
+        <input type="radio" name="group">
+        <div class="item-content">
+        Last 3 months
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-icon-left item-radio padding-bottom" style="border: none">
+        <input type="radio" name="group">
+        <div class="item-content">
+        Last 6 months
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+  </div>
+  <div class="padding">
+     <button class="button button-block button-calm theme_btn" >
+       Proceed
+    </button>
+ </div>
+ </form>
+ </ion-content>
+ </ion-view>

@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-content class="center-content padding login_screen">
+     <div style="padding-bottom:50px;">
+      <img src="img/cash.png">
+    </div>
+    <form class="padding login_form" ng-submit="loginform.$valid && sign_in()" name="loginform" novalidate>
+      <div class="list showvalidation">
+        <label class="item item-input">
+          <i class="icon ion-ios-email-outline"></i>
+            <input type="text" placeholder="Email or Mobile" ng-model="login_data.user_name" name="username" required>
+        </label>
+        <p ng-show="loginform.$submitted && loginform.username.$error.required">please enter your name</p>
+        <label class="item item-input" style="margin-top:20px;">
+          <i class="icon ion-ios-unlocked-outline"></i>
+            <input type="password" placeholder="Password" name="pwd" ng-model="login_data.user_pass" required>
+        </label>
+        <p ng-show="loginform.$submitted && loginform.pwd.$error.required">please enter your Password</p>
+      </div>
+      <button class="button theme_btn button-positive" style="color:#fff;border-radius:24px;min-width:220px;" type="submit">Log In</button>
+    </form>
+    <p style="color:#00bfff"> {{message}} </p>
+    <div class="text-center">
+       <p><a class="" ui-sref=""></a></p>
+       <p><a class="" ui-sref="forgot">Forgot Password ?</a></p>
+       <!-- <p><a class="" ui-sref="change_device">Change Device</a></p> -->
+       <button class="button reset_btn" style="color:#fff;border-radius:24px;min-width:60px" type="button" ng-click="reset_form()">Reset</button>
+    </div>
+    <br>
+    <div class="text-center">
+         <a class="" ui-sref="register">Not Registerd Yet ? Sign Up</a>
+         <!--<br>-->
+         <!--<a class="" ui-sref="user_setting">Invite Your Friends</a>-->
+         <!--<a class="" ui-sref="hot_offers">Hot Offers</a>
+         <br>-->register
+         <!--<a class="" ui-sref="hot_offers">DTH</a>
+         <br>
+         <a class="" ui-sref="hot_offers">DATA CARD</a>-->
+    </div>
+   
+    <div class="row">
+      <div class="col padding" ng-controller="socialLoginCtrl">
+        <button class="button button-positive  icon-left ion-social-facebook button-block " ng-click="fbLoginNew()">Facebook</button>
+      </div>
+      
+      <div class="col padding">
+        <!--<button class="button button-assertive icon-left ion-social-google button-block">Google</button>-->
+      </div>
+    </div>
+  
+  </ion-content>
+</ion-view>

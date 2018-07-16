@@ -1,0 +1,48 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button><h1 class="title">Hot Offers</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+  <ion-content class="coupons " style="padding-top:44px;">
+      <ion-slide-box on-slide-changed="slideChanged(index)">
+        <ion-slide ng-repeat="coupon in couponData">
+          <div class="card" style="margin:10px 10px 0px;padding:0px;">
+            <div class="text-center" style="background:#00bfff;padding:1px;">
+              <h4 style="color:#fff;">{{coupon.COUPON}}</h4>
+            </div>
+          
+          <div class="row">
+            <div class="col col-20"> </div>
+            <div class="col col-60">
+                <img src="img/product.jpg" style="width:100%;">
+            </div>
+            <div class="col col-20"> </div>
+          </div>
+          <div class="row">
+            <div class="col col-33 text-left">
+              <h4>Merchant</h4>
+              <h4>Brand</h4>
+            </div>
+            <div class="col col-67 text-left">
+              <p style="margin-top:10px;line-height: 21px;">Dummy.com</p>
+              <p style="line-height: 21px;">Dummy brand</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+          <div class="text-center" style="padding:20px 0px;">
+            <h4>Rs.494</h4>
+          </div>
+          <button class="button button-positive theme_btn button-block" style="border-radius:0px;margin:0px;">Buy Now</button>
+          </div>
+        </ion-slide>
+        
+        
+      </ion-slide-box>
+
+  </ion-content>
+  </ion-view>

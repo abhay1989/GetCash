@@ -1,0 +1,89 @@
+<ion-view ng-controller="EventsCtrl">
+  <ion-content class="passbook">
+  	
+    <div class="bar bar-header bar-light">
+      <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i>
+    </div>
+    <br>
+    <br>
+
+        <div class="text-center padding">
+          <span>Available Balance</span>
+          <h3 style="margin-top:10px;">₹ {{profile_data.TotalEarning}}</h3>
+        </div>  
+
+
+    <!--<div class="text-center padding">
+       <span>Available Balance</span>
+    	  <h3 style="margin-top:10px;">₹ 450.00</h3>
+     </div>-->
+  	<div class="row passbook_link" >
+  		<div class="col text-center">
+	       <a ui-sref="sendmoney">Send Money to Bank</a>
+  		</div>
+  	</div>
+   
+    <!--<div class="row padding" style="background:#f3f3f3;">
+    	<strong class="col">November 2016</strong>
+      <div class="col text-right">
+        <a class=" icon-left ion-chevron-right" ui-sref="statement"></a>
+      </div>
+    </div>
+  	
+    <div class="list">
+  		<div class="row item">
+      	<div class="col col-20 item-avatar">
+      		<img src="img/ionic.png" style="width:40px;height:auto;">
+      	</div>
+      	<div class="col col-60">
+        		<h4>Paid for Order</h4>
+      		<p>To: Mike</p>
+      		<p>November 16, 16:15</p>
+      	</div>
+      	<div class="col col-20 text-center">
+      		 <p>-₹ 213</p>
+      	</div>
+    		</div>
+    		<div class="row item">
+        	<div class="col col-20 item-avatar">
+        		<img src="img/ionic.png" style="width:40px;height:auto;">
+        	</div>
+        	<div class="col col-60">
+          	<h4>Paid for Order</h4>
+	      		<p>To: Mike</p>
+	      		<p>November 16, 16:15</p>
+        	</div>
+        	<div class="col col-20 text-center">
+        		 <p>-₹ 213</p>
+        	</div>
+    		</div>
+    		<div class="row item">
+        	<div class="col col-20 item-avatar">
+        		<img src="img/ionic.png" style="width:40px;height:auto;">
+        	</div>
+        	<div class="col col-60">
+          		<h4>Paid for Order</h4>
+	      		<p>To: Mike</p>
+	      		<p>November 16, 16:15</p>
+        	</div>
+        	<div class="col col-20 text-center">
+        		 <p>-₹ 213</p>
+        	</div>
+    		</div>
+    		<div class="row item">
+        	<div class="col col-20 item-avatar">
+        		<img src="img/ionic.png" style="width:40px;height:auto;">
+        	</div>
+        	<div class="col col-60">
+          		<h4>Paid for Order</h4>
+	      		<p>To: Mike</p>
+	      		<p>November 16, 16:15</p>
+        	</div>
+        	<div class="col col-20 text-center">
+        		 <p>-₹ 213</p>
+        	</div>
+    		</div>
+    </div>-->
+
+  </ion-content>
+</ion-view>

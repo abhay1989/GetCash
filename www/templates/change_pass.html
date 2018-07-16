@@ -1,0 +1,30 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="user_setting" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Change Your Password</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+<ion-content style="padding-top:45px;">
+  <form ng-submit="passform.$valid && change_password()" name="passform" novalidate> 
+  	<div class="list edit_fields padding showvalidation">  
+       <label class="item item-input">
+        <input type="password" placeholder="Old Password" name="old_pwd" ng-model="password_data.old_pass" required>
+       </label>
+       <p ng-show="passform.$submitted && passform.old_pwd.$error.required">Please enter your old password</p>  
+       <label class="item item-input">
+        <input type="password" placeholder="New Password" name="new_pwd" ng-model="password_data.user_pass" required>
+       </label>
+       <p ng-show="passform.$submitted && passform.new_pwd.$error.required">Please enter your new password</p>
+        <label class="item item-input">
+        <input type="password" placeholder="Confirm New Password" name="newONE_pwd" ng-model="password_data.confirm_pass" required>
+       </label>
+       <p ng-show="passform.$submitted && passform.newONE_pwd.$error.required">Please enter your confirm password</p>
+       <p style="color:red">{{errormsg}}</p>
+    </div>
+       <div class="padding" style="margin-top:30px;">
+        <button class="button button-positive theme_btn button-block">Submit</button>
+       </div>
+       <p style="color:#387ef5;">{{msg}}</p>
+       <p style="color:#387ef5;">{{message}}</p>
+  </form>
+</ion-content>
+</ion-view>

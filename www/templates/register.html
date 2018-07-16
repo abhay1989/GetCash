@@ -1,0 +1,67 @@
+<ion-view ng-controller="EventsCtrl">
+<ion-content class="center-content padding register_screen">
+  <div style="padding-bottom:15px;padding-top:20px;">
+    <img src="img/cash.png">
+  </div>
+<form class="register_form" ng-submit="registerform.$valid && sign_up()" name="registerform" novalidate>
+  <div class="form padding">
+    <div class="list showvalidation">
+      <label class="item item-input">
+        <input type="text" placeholder="User Name" ng-model="register_data.user_name" name="username" required>
+      </label>
+     <p ng-show="registerform.$submitted && registerform.username.$error.required">please enter your name</p>
+      <label class="item item-input">
+        <input type="text" placeholder="Email Id" ng-model="register_data.user_email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{0,9}$">
+      </label>
+      <p ng-show="registerform.$submitted && registerform.email.$error.required">please enter your email</p>
+      <p ng-show="registerform.$submitted && registerform.email.$error.pattern">please enter a valid email</p>
+       <label class="item item-input">
+        <input type="number" placeholder="Mobile No" ng-model="register_data.user_mobile" name="mobile" required ng-maxlength='10' ng-minlength='10' pattern="[0-9]{10}">
+      </label>
+      <p ng-show="registerform.$submitted && registerform.mobile.$error.required">please enter your mobile (10 Digits)</p>
+      <p ng-show="registerform.$submitted && registerform.mobile.$error.maxlength">please enter valid mobile</p>
+      <p ng-show="registerform.$submitted && registerform.mobile.$error.minlength">please enter valid mobile</p>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="register_data.user_pass" name="pass"  required >
+      </label>
+      <p ng-show="registerform.$submitted && registerform.pass.$error.required">please enter your password</p>
+      <label class="item item-input">
+        <input type="password" placeholder="Confirm Password" ng-model="register_data.confirm_pass" name="conf_pass" compare-to="register_data.user_pass" required>
+      </label>
+      <p ng-show="registerform.$submitted && registerform.conf_pass.$error.required">please enter your confirm password</p>
+       <p>{{errormsg}}</p>
+      <label class="item item-input" >
+        <input type="number" placeholder="Refer Id" ng-model="register_data.refer_id" name="ref">
+      </label>
+    </div>
+    <div style="padding-top:15px;">
+      <button type="submit" class="button button-positive theme_btn" style="color:#fffff;border-radius:24px;width:150px;" ng-disabled="checkboxModel.value2=='NO'">Register Now</button>
+
+      <div class="col-sm-12">                            
+
+       <label>
+       <input ng-change="ShowTermsMessage()" ng-model="checkboxModel.value2" ng-true-value="'YES'" ng-false-value="'NO'" style="width: 20px;color:#fff;" type="checkbox" name="terms" ng-init="checkboxModel.value2='NO'"> <a href="">I agree with the Terms and Conditions</a>
+       </label>
+        <span class="error_msg" style="float:right;" data-ng-if="term.termsmessage==true">Please accept Terms and Conditions</span>
+        <ion-icon name="heart"></ion-icon>
+        <button class="icon ion-document" item-right clear ui-sref="terms1">
+        </button>
+      </div>
+
+
+      <!---<p style="color:#d3d3d3;">I accept Terms & Conditions </p>-->
+
+
+    </div>
+    <p style="color:#387ef5;">{{msg}}</p>
+  </div>
+</form>
+
+<div class="text-center padding">
+  <a class="" ui-sref="login">Log In</a>
+</div>
+<div>
+<button class="button reset_btn" style="color:#fff;border-radius:24px;min-width:60px" type="button" ng-click="reset_form()" ng-disabled="checkboxModel.value2=='NO'">Reset</button>
+</div>
+</ion-content>
+</ion-view>

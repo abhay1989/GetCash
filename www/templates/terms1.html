@@ -1,0 +1,28 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-dark" ui-sref="register" ><i class="ion-chevron-left"></i></button><h1 class="title"> Terms and Conditions </h1>
+</div>
+<ion-view>
+ <ion-content style="padding-top:44px;" class="terms">
+   <div class="padding terms_box text-center">
+        <h4 >Terms & Condition</h4>
+   </div>
+  <div class="card">
+  	<h5>Cashapp Networks Pvt. Ltd. Privacy Policy (Last Revised {{term.ReviseDate | date:'MMM d, y'}})
+    </h5>
+    </div>
+
+<!--   	<p>
+  	 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  	</p>
+ -->  
+ <div class="card" ng-repeat="term in terms_data">
+  <h4><center><b><p ng-if="term.SrNo==1">AGREEMENT</p></b></center></h4>
+  <h4><center><b><p ng-if="term.SrNo==0">{{term.TermsHeader}}</p></b></center></h4>
+  <b><p ng-if="term.SrNo>0">{{term.SrNo}}.{{term.TermsHeader}}</p></b>
+  <p>{{term.TermsDesc}}</p>
+ </div> 
+
+</div>
+  </ion-content>
+</ion-view>

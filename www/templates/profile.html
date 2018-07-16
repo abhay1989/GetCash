@@ -1,0 +1,70 @@
+<ion-view ng-controller="EventsCtrl">
+	<ion-content class="profile">
+		<div class="card">
+			<div class="row profile_info">
+				<div class="col col-25">
+						<img ng-src="{{ profile_data.UPhoto_name && profileimagepath+profile_data.UPhoto_name || 'img/dummy.jpg' }}" />
+				</div>
+				<div class="col col-50">
+					<h5>{{profile_data.UserName}} {{profile_data.LastName}}</h5>
+					<p>GETCASH BAL. <span>₹ {{profile_data.TotalEarning}}</span> </p>
+				</div>
+				<div class="col col-25 text-center">
+					<button class="button button-positive button-small theme_btn" ui-sref="edit_profile">Edit Profile</button>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+				<div class="row">
+					<div class="col col-25 text-center">
+						<span style="font-size:31px;"><i class="icon ion-star"></i></span>
+					</div>
+					<div class="col col-75">
+						<h5>My GetCash Code</h5>
+					</div>
+				</div>
+		</div>
+		<div class="card profile_fields">
+			<div class="row">
+				<div class="col col-25 text-center">
+					<span><i class="icon ion-pricetag"></i></span>
+				</div>
+				<div class="col col-75 ">
+				 <h5 class="field_text">My Wishlist</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-25 text-center">
+					<span><i class="icon ion-tshirt"></i></span>
+				</div>
+				<div class="col col-75">
+					<h5 class="field_text">My Recharge</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-25 text-center">
+					<span><i class="icon ion-pricetag"></i></span>
+				</div>
+				<div class="col col-75 ">
+					<h5 class="field_text">My Earning</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-25 text-center">
+					<span><i class="icon ion-skip-forward"></i></span>
+				</div>
+				<div class="col col-75">
+					<h5 class="field_text">My Orders</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-25 text-center">
+					<span><i class="icon ion-tshirt"></i></span>
+				</div>
+				<div class="col col-75">
+					<h5 class="field_text">My Orders</h5>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

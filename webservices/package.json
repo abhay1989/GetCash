@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect-multiparty": "^2.0.0",
+    "crypto": "0.0.3",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "mkdirp": "^0.5.1",
+    "mssql": "^4.0.4",
+    "mysql": "^2.13.0",
+    "mysql-crud": "^0.1.4",
+    "nodemailer": "^4.0.1",
+    "sanitize-filename": "^1.6.1",
+    "store": "^2.0.4"
+  }
+}

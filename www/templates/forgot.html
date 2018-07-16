@@ -1,0 +1,28 @@
+<ion-view view-title="" ng-controller="EventsCtrl">
+  <ion-content class="center-content padding login">
+    <div class="padding text-center">
+      <i class="icon ion-help-circled" style="font-size:60px;"></i>
+      <h4>Forgot your Password ?</h4>
+      <p>Enter your email address below for reset your password.</p>
+    </div>
+    <form class="padding" name="forgotForm" ng-submit="forgotForm.$valid && fpass()" novalidate>
+      <div class="list showvalidation">
+        <label class="item item-input">
+          <input type="text" placeholder="Email" ng-model="user_data.user_email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{0,9}$" required/>
+        </label>
+        <p ng-show="forgotForm.$submitted && forgotForm.email.$error.required">please enter your Email </p>
+        <p ng-show="forgotForm.$submitted && forgotForm.email.$error.pattern">please enter a valid email</p>
+      </div>
+      <button class="button button-positive button-block theme_btn" type="submit">Send</button>
+    </form>
+    <p style="color:red"> {{message}} </p>
+    <div class="text-center">
+      <br>
+        <a class="" ui-sref="login">Log In</a>
+      <br>
+        <a class="" ui-sref="register">Sign Up</a>
+      <br>
+         <a class="" ui-sref="contactus">Need any Help ? </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,60 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-dark" ui-sref="challenges" ><i class="ion-chevron-left"></i></button><h1 class="title">Install App</h1>
+</div>
+<ion-view ng-controller="searchChallenge">
+	<ion-content style="padding-top:44px;" class="app_install" ng-controller="EventsCtrl">
+
+<!--   ng-init="showAppDetails()" -->
+  <!-- ng-repeat="app in appdata"> -->
+
+        <div class="card">
+          <div class="row">
+          <div class="col col-20">
+          <!--<img src="img/app.png">-->
+
+          <img ng-src="{{appData.AppImgUrl && profileimagepath+'/'+appData.AppImgUrl || 'img/dummy.jpg' }}" style="width:50px;height:50px">          
+        </div>
+        <div class="col col-80">
+          <strong>App Name Title</strong>
+          <p>{{appData.AppName}}</p>
+        </div>
+        </div>
+        </div>
+
+		<div class="card">
+      <div class="row">
+        <div class="col col-75">
+          <h4><strong>Install & Try the App</strong></h4>
+        </div>
+        <div class="col col-30 text-right">
+          <div class="gift">
+                <span>₹ {{appData.AppCost}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="padding">
+        <h5>Description</h5>
+        <ol>
+          <li>{{appData.AppDescription}}</li>
+<!--           <li>2. Register is must</li>
+          <li>3. Don't unistall befor 3 days</li>
+ -->        </ol>
+      </div>
+      <div class="padding">
+        <h5>Important Tips</h5>
+        <ol>
+          <li>1. Lorem ipsum dolor sit amet, consectetur.</li>
+          <li>2. Lorem ipsum dolor sit amet, consectetur.</li>
+          <li>3. Lorem ipsum dolor sit amet, consectetur.</li>
+          <li>4. Lorem ipsum dolor sit amet, consectetur.</li>
+        </ol>
+      </div>
+      <!--<div class="padding">
+       <button type="button" class="button button-positive theme_btn button-block" name="button" ng-click="openMarket('https://play.google.com/store/apps/details?id=com.ionicframework.todo576066')">Install</button>-->
+
+       <div class="padding">
+       <center><button type="button" class="button button-positive theme_btn button-block" name="button" ng-click="openMarket(appData)" style="color:#fffff;border-radius:24px;width:150px;">Install</button></center>
+      </div>
+	    </div>
+	</ion-content>
+</ion-view>

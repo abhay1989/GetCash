@@ -1,0 +1,8 @@
+{
+  "name": "GetCash",
+  "app_id": "e895a458",
+  "type": "ionic-angular",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}

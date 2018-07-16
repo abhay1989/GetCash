@@ -1,0 +1,86 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="app.tab.home" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Mobile Recharge</h1>
+</div>
+<ion-view ng-controller="EventsCtrl">
+<ion-content style="padding-top:44px;">
+  <form>
+  
+  <div class="padding row">
+    
+    <div class="col">
+      <label class="item item-icon-left item-radio" style="border: none">
+        <input type="radio" name="group">
+        <div class="item-content">
+        Prepaid
+        </div>
+        <i class="radio-icon ion-checkmark" ng-model="mobsb_data.rcprepaid"></i>
+      </label>
+    </div>
+
+    <div class="col">
+      <label class="item item-icon-left item-radio" style="border: none">
+        <input type="radio" name="group">
+        <div class="item-content">
+          Postpaid
+        </div>
+        <i class="radio-icon ion-checkmark" ng-model="mobsb_data.rcpostpaid"></i>
+      </label>
+    </div>
+
+  </div>
+  
+  <div class="padding custom_select">
+      <label class="item item-input">
+      <input type="number" placeholder="Enter your Mobile Number" required ng-maxlength='10' ng-minlength='10' ng-model="mobsb_data.mobileno">
+      </label>
+  </div>
+
+    <div class="offer_select">
+
+      <label class="item item-input item-select">
+            <div class="input-label">Select Operator</div>
+            <select ng-model="mobsb_data.operator_code" 
+            ng-options="merchant.operator_code as merchant.operator_name for merchant in sproviders_list">
+            <option value="">Select Operator</option>
+
+      </label>
+    </div>  
+
+      <div class="padding row">
+        <input type="hidden">
+      </div>
+
+      <div class="offer_select">
+
+        <label class="item item-input item-select">
+                <div class="input-label">Select Circle</div>
+                <select ng-model="mobsb_data.circle_code" 
+                  ng-options="cmerchant.circle_code as cmerchant.circle_name for cmerchant in sprovidercircles_list" >
+                  <option value="">Select Circle</option>
+
+          </label>
+       </div>   
+
+      <div class="padding row">
+        <input type="hidden">
+      </div>
+
+      <div class="padding row">
+        <input type="number" placeholder="Enter Recharge Amount" ng-model="mobsb_data.amount">
+      </div>
+
+      <!--<ion-md-input ng-model="amount" placeholder="Amount" type="number"></ion-md-input>-->      
+    <br>
+    <div class="">
+      <center>
+        <button class="button theme_btn button-positive" style="color:#fff;border-radius:24px;min-width:220px;" ng-click="getMobRechargeBookStatus(mobsb_data)">
+        Proceed to Recharge
+        </button>
+      </center>
+    </div>
+
+
+  </form>
+</ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+<div class="bar bar-header bar-light">
+    <button class="button button-dark" ui-sref="user_setting" ><i class="ion-chevron-left"></i></button>
+    <h1 class="title">Security</h1>
+</div>
+
+<ion-view ng-controller="EventsCtrl">
+  <ion-content style="padding-top:44px;" class="security">
+    <div class="padding">
+      <div class="security_box text-center">
+        <span><i class="icon ion-locked"></i></span>
+      </div>
+    </div>
+
+      <p class="padding-horizontal">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="card padding-vertical">
+        <div class="item item-toggle">
+           Get Security Notifications
+           <label class="toggle toggle-positive">
+             <input type='checkbox' ng-init='checkStatus=false'
+              ng-model='checkStatus' ng-change="showSettings(checkStatus)">
+
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </div>
+      </div>
+
+
+
+  </ion-content>
+</ion-view>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBwCtAzgMZNUEeDsF4EVoX8ofEPBe7vOH4",
+    authDomain: "getcash-56698.firebaseapp.com",
+    databaseURL: "https://getcash-56698.firebaseio.com",
+    projectId: "getcash-56698",
+    storageBucket: "getcash-56698.appspot.com",
+    messagingSenderId: "768156827899"
+  };
+  firebase.initializeApp(config);
+</script>
